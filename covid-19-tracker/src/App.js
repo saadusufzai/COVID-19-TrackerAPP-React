@@ -1,10 +1,10 @@
 import React from 'react';
 
 import './App.css';
-import Header from './components/Header';
-import Chart from './components/Chart';
-import Cards from './components/Cards';
-import Countries from './components/Countries';
+import Header from './components/Header/Header';
+import Chart from './components/Charts/Chart';
+import Cards from './components/Cards/Cards';
+import Countries from './components/Countries/Countries';
 
 function App() {
   return (
