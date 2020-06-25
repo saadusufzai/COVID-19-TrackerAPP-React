@@ -4,42 +4,35 @@ import Header from "./components/Header/Header";
 import Chart from "./components/Charts/Chart";
 import Cards from "./components/Cards/Cards";
 import Countries from "./components/Countries/Countries";
-import axios from "axios";
+import {fetchData} from './api/api'
 
-function App() {
-  const url = "https://covid19.mathdro.id/api";
-  const [data, setData] = useState({
-    confirmed:[],
-    deaths:[],
-    recovered:[]
-  })
-   
-    
-  useEffect(() => {
-    async function getData() {
-      const res = await axios.get(url);
-      setData(res.data)
-      
-      
-    }
-    getData();
-    
-   },[]);
-   console.log(data.deaths.value)
-   console.log(data.recovered.value)
-   console.log(data.confirmed.value)
- 
+class App extends React.Component {
+  state = {
+      data: {},
+
+  }
+
+  async componentDidMount() {
+      const fetchedData = await fetchData();
+
+      this.setState({ data: fetchedData.data })
+     
+  }
   
-  return (
-    <>
-      <Header />
-      <div className="container">
-        <Cards data={data} />
-        <Countries />
-        <Chart />
-      </div>
-    </>
-  );
-}
+   render() {
+    const { data } = this.state
 
+    return (
+      <div>
+        <Header />
+        <div className="container">
+          <Cards data={data} />
+          <Countries />
+          <Chart />
+        </div>
+    </div>
+    )
+
+}
+}
 export default App;
