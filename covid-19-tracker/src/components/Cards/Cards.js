@@ -9,7 +9,7 @@ export default function Cards({ data: { confirmed, recovered, deaths, lastUpdate
     if(!confirmed){
         return 'Loading'
     }
-    console.log(confirmed)
+    
     return (
         <div>
             <Grid  className={styles.container} container spacing={3} justify='center'>

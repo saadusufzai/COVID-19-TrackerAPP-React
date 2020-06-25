@@ -4,6 +4,8 @@ import Header from "./components/Header/Header";
 import Chart from "./components/Charts/Chart";
 import Cards from "./components/Cards/Cards";
 import Countries from "./components/Countries/Countries";
+import Table from "./components/Table/table";
+
 import {fetchData} from './api/api'
 import corona from './images/corona.png'
 
@@ -29,6 +31,7 @@ class App extends React.Component {
         <Header />
         <div className="container">
           <Cards data={data} />
+          <Table data={data}/>
           <Countries />
           <Chart />
         </div>
