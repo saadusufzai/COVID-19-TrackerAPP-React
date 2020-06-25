@@ -1,10 +1,11 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import "./App.css";
 import Header from "./components/Header/Header";
 import Chart from "./components/Charts/Chart";
 import Cards from "./components/Cards/Cards";
 import Countries from "./components/Countries/Countries";
 import {fetchData} from './api/api'
+import corona from './images/corona.png'
 
 class App extends React.Component {
   state = {
@@ -24,6 +25,7 @@ class App extends React.Component {
 
     return (
       <div>
+        <img alt='covid-19' className='image' width='340px' src={corona}/>
         <Header />
         <div className="container">
           <Cards data={data} />
