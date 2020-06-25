@@ -17,7 +17,9 @@ export const fetchData = async () => {
 
 export const pakData = async ()=>{
     try{
-        const response = await axios.get('covid19.mathdro.id/api/countries/pakistan')
+        const response = await axios.get('https://covid19.mathdro.id/api/countries/pakistan/confirmed')
         return response
+    }catch(err){
+
     }
 }
