@@ -5,7 +5,7 @@ import { Line, Bar,Pie,HorizontalBar } from 'react-chartjs-2';
 
 
 
-export default function Chart({data:{confirmed,deaths,recovered,lastUpdate}}) {
+export default function GlobalChart({data:{confirmed,deaths,recovered,lastUpdate}}) {
     // const[data, setData] = useState([])
     // useEffect(() => {
     //    const fetchAPI = async ()=>{ 
@@ -18,8 +18,9 @@ export default function Chart({data:{confirmed,deaths,recovered,lastUpdate}}) {
     if(!deaths){
         return 'loading...'
     }
+
    
-    // console.log(deaths.value)
+ 
     // console.log(recovered.value)
 
 
@@ -30,14 +31,16 @@ export default function Chart({data:{confirmed,deaths,recovered,lastUpdate}}) {
                 labels:['Confirmed','Recovered','Deaths'],
                 datasets:[{
                     data:[confirmed.value,recovered.value,deaths.value],
-                    backgroundColor:['Yellow','green','red']
+                    backgroundColor:['rgba(0, 119, 255, 0.699)','rgba(81, 255, 0, 0.651)','rgba(255, 0, 0, 0.692)']
                 }],
                 
             }}
             options={{
                 title:{
-                    text:'COVID CASE'
-                }
+                    display:true,
+                    text:'COVID SITUAION IN THE WORLD'
+                },
+                legend:false
             }}
         
         />

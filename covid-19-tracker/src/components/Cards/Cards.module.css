@@ -1,8 +1,8 @@
 .red{
-    border-bottom: red 5px solid;
+    border-bottom: rgba(255, 0, 0, 0.692) 5px solid;
 }
 .green{
-    border-bottom: rgb(81, 255, 0) 5px solid;
+    border-bottom: rgba(81, 255, 0, 0.651) 5px solid;
 }
 .blue{
     border-bottom: rgba(0, 119, 255, 0.699) 5px solid;

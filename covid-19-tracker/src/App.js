@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import Header from "./components/Header/Header";
-import Chart from "./components/Charts/Chart";
+import GlobalChart from "./components/Charts/GlobalChart";
 import Cards from "./components/Cards/Cards";
 import Countries from "./components/Countries/Countries";
 import Table from "./components/Table/table";
@@ -41,8 +41,7 @@ class App extends React.Component {
         <div className="container">
           <Cards data={data} />
           <Table provinces={provinces}/>
-          <Countries />
-          <Chart data={data} />
+          <GlobalChart data={data} />
         </div>
     </div>
     )
