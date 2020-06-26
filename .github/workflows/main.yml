@@ -33,7 +33,7 @@ jobs:
       uses: borales/actions-yarn@v2.3.0
        
     - name: Material Git Hub Icon 
-      run: yarn add @material-ui/icons/GitHub # will run `adding GitHub icon` command
+      run: npm i material-design-icons # will run `adding GitHub icon` command
     
     - name: Yarn Build
       run: yarn build
