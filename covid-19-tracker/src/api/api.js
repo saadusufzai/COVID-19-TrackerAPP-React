@@ -23,3 +23,11 @@ export const fetchcountries = async () => {
     return countries;
   } catch (error) {}
 };
+
+
+export const allCountries = async (country) => {
+  try {
+    const {data:{countries}} = await axios.get(`https://covid19.mathdro.id/api/countries/${country}`);
+    return countries;
+  } catch (error) {}
+};

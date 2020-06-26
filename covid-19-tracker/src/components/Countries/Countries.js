@@ -20,14 +20,6 @@ export default function Tables() {
       };
       fetch();
     }, []);
-    console.log(countries);
-  
-  
-
-
-    
-
-
 
   return (
     <div>

@@ -45,7 +45,7 @@ const App = () => {
 
       <div className="container">
         <Cards data={data} />
-        <Table provinces={provience} />
+        <Table provinces={provience}  country={search} />
         <GlobalChart data={data} />
         <Countries prov={data} />
       </div>

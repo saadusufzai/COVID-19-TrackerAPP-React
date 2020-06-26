@@ -9,10 +9,12 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import styles from "./Table.module.css";
+import {allCountries} from '../../api/api'
 
-export default function Tables({ provinces: { data } }) {
+
+export default function Tables({ provinces: { data } }, country) {
   const pro = data;
-
+  console.log(country +'countryyyyyyyyy')
   const StyledTableCell = withStyles((theme) => ({
     head: {
       backgroundColor: theme.palette.common.black,
