@@ -16,11 +16,11 @@ export default function Cards({ data: { data } }) {
 
   return (
     <div>
-      <Grid className={styles.container} container spacing={3} justify="center">
+      <Grid  xs={12}   className={styles.container} container spacing={3} justify="center">
         <Grid
           item
           component={Card}
-          xs={3}
+          xs={12} sm={3}
           className={cx(styles.blue, styles.card)}
         >
           <CardContent className="cards" variant="outlined">
@@ -45,7 +45,7 @@ export default function Cards({ data: { data } }) {
         <Grid
           item
           component={Card}
-          xs={3}
+          xs={12} sm={3}
           className={cx(styles.green, styles.card)}
         >
           <CardContent className="cards" variant="outlined">
@@ -70,7 +70,7 @@ export default function Cards({ data: { data } }) {
         <Grid
           item
           component={Card}
-          xs={3}
+          xs={12} sm={3}
           className={cx(styles.red, styles.card)}
         >
           <CardContent className="cards" variant="outlined">
