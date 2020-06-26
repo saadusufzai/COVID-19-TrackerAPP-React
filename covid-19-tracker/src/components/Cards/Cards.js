@@ -24,7 +24,11 @@ export default function Cards({ data: { data } }) {
           className={cx(styles.blue, styles.card)}
         >
           <CardContent className="cards" variant="outlined">
-            <Typography color="textSecondary" gutterBottom>
+            <Typography
+              style={{ fontSize: 20 }}
+              color="textSecondary"
+              gutterBottom
+            >
               Infected
             </Typography>
             <CountUp
@@ -45,7 +49,11 @@ export default function Cards({ data: { data } }) {
           className={cx(styles.green, styles.card)}
         >
           <CardContent className="cards" variant="outlined">
-            <Typography color="textSecondary" gutterBottom>
+            <Typography
+              style={{ fontSize: 20 }}
+              color="textSecondary"
+              gutterBottom
+            >
               Recovered
             </Typography>
             <CountUp
@@ -66,7 +74,11 @@ export default function Cards({ data: { data } }) {
           className={cx(styles.red, styles.card)}
         >
           <CardContent className="cards" variant="outlined">
-            <Typography color="textSecondary" gutterBottom>
+            <Typography
+              style={{ fontSize: 20 }}
+              color="textSecondary"
+              gutterBottom
+            >
               Deaths
             </Typography>
             <CountUp
