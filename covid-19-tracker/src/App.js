@@ -12,6 +12,12 @@ import corona from "./images/corona.png";
 const App = () => {
   const [data, setData] = useState([]);
   const [provience, setProvience] = useState([]);
+  const [search, setSearch] = useState('')
+
+ const handelInput =  (e)=>{
+     setSearch(e.target.value)
+  }
+  
 
   useEffect(() => {
     async function fetcApi() {
@@ -34,7 +40,7 @@ const App = () => {
 
   return (
     <div>
-      <Header />
+      <Header handelInput={handelInput} />
       <img alt="covid-19" className="image" width="340px" src={corona} />
 
       <div className="container">

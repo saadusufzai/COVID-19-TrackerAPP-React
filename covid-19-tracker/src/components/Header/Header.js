@@ -64,13 +64,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Header() {
+export default function Header({handelInput}) {
   const [countries, setCountries] = useState([]);
-  const [search, setSearch] = useState('')
-
- const handelInput =  (e)=>{
-     setSearch(e.target.value)
-  }
+  
   
   useEffect(() => {
     const fetch = async () => {
@@ -82,7 +78,7 @@ export default function Header() {
   const classes = useStyles();
   
   
-console.log(search +"country")
+
   return (
     <div className={classes.root}>
       <AppBar position="static">
@@ -106,9 +102,9 @@ console.log(search +"country")
              
             </div>
             <FormControl>
-            <NativeSelect container style={{width:'100%'}}>
+            <NativeSelect  onChange={handelInput} container style={{width:'100%'}}>
              <option value=''> Countries</option>
-            {countries.map((country,i)=><option key={i} onSelect={handelInput}   value={country.name}>{country.name}</option>)}
+            {countries.map((country,i)=><option key={i}   value={country.name}>{country.name}</option>)}
          </NativeSelect>
          </FormControl>
           </div>
