@@ -58,7 +58,7 @@ const App = () => {
       <div className="container">
         <Cards data={data} />
         <Table provinces={provience} country={countryName} />
-        <Country  handelInput={handelInput} countries={countries} />
+        {/* <Country  handelInput={handelInput} countries={countries} /> */}
         <GlobalChart data={data} />
 
       </div>

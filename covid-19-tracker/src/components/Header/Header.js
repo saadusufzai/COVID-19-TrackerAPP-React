@@ -67,7 +67,7 @@ export default function Header({ handelInput, countries }) {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Toolbar>
           <GitHubIcon
             edge="start"
