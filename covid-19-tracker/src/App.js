@@ -3,7 +3,7 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import GlobalChart from "./components/Charts/GlobalChart";
 import Cards from "./components/Cards/Cards";
-//import Countries from "./components/Countries/Countries";
+import Countries from "./components/Countries/Countries";
 import Table from "./components/Table/table";
 
 import { fetchData, pakData } from "./api/api";
@@ -41,6 +41,7 @@ const App = () => {
         <Cards data={data} />
         <Table provinces={provience} />
         <GlobalChart data={data} />
+        <Countries prov={data} />
       </div>
     </div>
   );
