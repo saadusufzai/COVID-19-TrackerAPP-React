@@ -6,7 +6,7 @@ import Cards from "./components/Cards/Cards";
 import Country from "./components/countries/country";
 import Table from "./components/Table/table";
 
-import { pakData, allCountriesData,fetchcountries } from "./api/api";
+import { pakData, allCountriesData, fetchcountries } from "./api/api";
 import corona from "./images/corona.png";
 
 const App = () => {
@@ -37,8 +37,7 @@ const App = () => {
   }, [countryName]);
 
   const [countries, setCountries] = useState([]);
-  
-  
+
   useEffect(() => {
     const fetch = async () => {
       const data = await fetchcountries();
@@ -60,7 +59,6 @@ const App = () => {
         <Table provinces={provience} country={countryName} />
         {/* <Country  handelInput={handelInput} countries={countries} /> */}
         <GlobalChart data={data} />
-
       </div>
     </div>
   );
