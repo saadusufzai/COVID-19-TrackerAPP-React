@@ -27,12 +27,11 @@ jobs:
       with:
         version: 12  
         key:  
-    - name: changing directory
-      run: cd covid-19-tracker
+
 
     # Runs a set of commands using the runners shell
     - name: GitHub Action for Yarn
-      uses: borales/actions-yarn@v2.0.0  
+      uses: borales/actions-yarn@v2.3.0  
         
     - name: ceating build
       run: yarn build
