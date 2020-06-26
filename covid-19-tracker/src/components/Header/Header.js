@@ -1,10 +1,8 @@
 import React,{useState,useEffect} from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { fade, makeStyles } from '@material-ui/core/styles';
-import MenuIcon from '@material-ui/icons/Menu';
 import FormControl from '@material-ui/core/FormControl';
 import {fetchcountries} from '../../api/api'
 import { NativeSelect } from '@material-ui/core';
@@ -34,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
   search: {
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 1.15),
+    backgroundColor: fade(theme.palette.common.white, 1),
     '&:hover': {
       backgroundColor: fade(theme.palette.common.white, 1),
     },
@@ -85,12 +83,12 @@ export default function Header({handelInput}) {
         <Toolbar>
           <GitHubIcon
             edge="start"
-            className={classes.menuButton}
+            className={classes.menuButton, classes.clickableIcon}
             color="inherit"
             aria-label="open drawer"
             role='img'
             onClick={()=>{window.location.href='https://github.com/saadusufzai/COVID-19-TrackerAPP-React/tree/master/covid-19-tracker'}}
-            className={classes.clickableIcon}
+            
           >
            
           </GitHubIcon>
@@ -102,7 +100,7 @@ export default function Header({handelInput}) {
              
             </div>
             <FormControl>
-            <NativeSelect  onChange={handelInput} container style={{width:'100%'}}>
+            <NativeSelect  onChange={handelInput}  style={{width:'100%'}}>
              <option value=''> Countries</option>
             {countries.map((country,i)=><option key={i}   value={country.name}>{country.name}</option>)}
          </NativeSelect>

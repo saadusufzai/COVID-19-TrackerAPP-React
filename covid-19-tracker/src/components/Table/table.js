@@ -9,12 +9,10 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import styles from "./Table.module.css";
-import {allCountries} from '../../api/api'
 
-
-export default function Tables({ provinces: { data } }, country) {
+export default function Tables({ provinces: { data }, country }) {
   const pro = data;
-  console.log(country +'countryyyyyyyyy')
+
   const StyledTableCell = withStyles((theme) => ({
     head: {
       backgroundColor: theme.palette.common.black,
@@ -48,18 +46,19 @@ export default function Tables({ provinces: { data } }, country) {
     return "loading...";
   }
 
+  console.log(data);
   return (
     <div className={styles.container}>
       <Typography color="textSecondary" variant="h4" align="center">
         {" "}
-        COVID-19 Detail of Paksitan
+        COVID-19 Detail of {country ? country : "Pakistan"}
       </Typography>
       <TableContainer className={classes.container} component={Paper}>
         <Table className={classes.table} aria-label="customized table">
           <TableHead>
             <TableRow>
-              <StyledTableCell>Countries</StyledTableCell>
-              <StyledTableCell align="center">Total Cases</StyledTableCell>
+              <StyledTableCell>Proviences</StyledTableCell>
+              <StyledTableCell align="center">TotalCases</StyledTableCell>
               <StyledTableCell align="center">Recovered</StyledTableCell>
               <StyledTableCell align="center">Deaths</StyledTableCell>
               <StyledTableCell align="center">Active</StyledTableCell>
@@ -69,12 +68,13 @@ export default function Tables({ provinces: { data } }, country) {
             {pro.map((row) => (
               <StyledTableRow key={row.provinceState}>
                 <StyledTableCell component="th" scope="row">
-                  {row.provinceState}
+                  {row.provinceState ? row.provinceState : row.countryRegion}
                 </StyledTableCell>
                 <StyledTableCell align="center">
                   {row.confirmed}
                 </StyledTableCell>
                 <StyledTableCell align="center">
+                  {" "}
                   {row.recovered}
                 </StyledTableCell>
                 <StyledTableCell align="center">{row.deaths}</StyledTableCell>
