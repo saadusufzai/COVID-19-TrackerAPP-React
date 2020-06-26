@@ -1,51 +1,49 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import Header from "./components/Header/Header";
 import GlobalChart from "./components/Charts/GlobalChart";
 import Cards from "./components/Cards/Cards";
-import Countries from "./components/Countries/Countries";
+//import Countries from "./components/Countries/Countries";
 import Table from "./components/Table/table";
 
-import {fetchData, pakData} from './api/api'
-import corona from './images/corona.png'
+import { fetchData, pakData } from "./api/api";
+import corona from "./images/corona.png";
 
-class App extends React.Component {
-  state = {
-      data: {},
-      provinces:[]
+const App = () => {
+  const [data, setData] = useState([]);
+  const [provience, setProvience] = useState([]);
 
-  }
-
-  async componentDidMount() {
+  useEffect(() => {
+    async function fetcApi() {
       const fetchedData = await fetchData();
-      const fetchedPakData= await pakData();
+      setData(fetchedData);
+    }
+    fetcApi();
+  }, []);
 
-      this.setState({ data: fetchedData.data })
+  useEffect(() => {
+    async function fetcApi() {
+      const fetchedData = await pakData();
+      setProvience(fetchedData);
+    }
+    fetcApi();
+  }, []);
 
-      this.setState({ provinces:fetchedPakData.data })
-    // this.setState(fetchedPakData)
-  }
-  
-  
+  // const { data } = data
+  // const  {provinces}  = provience
 
-   render() {
-    const { data } = this.state
-    const  {provinces}  = this.state
-  
+  return (
+    <div>
+      <Header />
+      <img alt="covid-19" className="image" width="340px" src={corona} />
 
-    return (
-      <div>
-        <Header />
-        <img alt='covid-19' className='image' width='340px' src={corona}/>
-        
-        <div className="container">
-          <Cards data={data} />
-          <Table provinces={provinces}/>
-          <GlobalChart data={data} />
-        </div>
+      <div className="container">
+        <Cards data={data} />
+        <Table provinces={provience} />
+        <GlobalChart data={data} />
+      </div>
     </div>
-    )
+  );
+};
 
-}
-}
 export default App;
