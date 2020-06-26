@@ -3,10 +3,10 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import GlobalChart from "./components/Charts/GlobalChart";
 import Cards from "./components/Cards/Cards";
-//import Countries from "./components/Countries/Countries";
+import Country from "./components/countries/country";
 import Table from "./components/Table/table";
 
-import { pakData, allCountriesData } from "./api/api";
+import { pakData, allCountriesData,fetchcountries } from "./api/api";
 import corona from "./images/corona.png";
 
 const App = () => {
@@ -36,18 +36,31 @@ const App = () => {
     fetcApi();
   }, [countryName]);
 
+  const [countries, setCountries] = useState([]);
+  
+  
+  useEffect(() => {
+    const fetch = async () => {
+      const data = await fetchcountries();
+      setCountries(data);
+    };
+    fetch();
+  }, []);
+
   // const { data } = data
   // const  {provinces}  = provience
   // console.log(countryName)
   return (
     <div>
-      <Header handelInput={handelInput} />
+      <Header handelInput={handelInput} countries={countries} />
       <img alt="covid-19" className="image" width="340px" src={corona} />
 
       <div className="container">
         <Cards data={data} />
         <Table provinces={provience} country={countryName} />
+        <Country  handelInput={handelInput} countries={countries} />
         <GlobalChart data={data} />
+
       </div>
     </div>
   );
