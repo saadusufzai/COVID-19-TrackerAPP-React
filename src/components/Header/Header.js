@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
@@ -77,7 +77,7 @@ export default function Header({ handelInput, countries }) {
             role="img"
             onClick={() => {
               window.location.href =
-                "https://github.com/saadusufzai/COVID-19-TrackerAPP-React/tree/master/covid-19-tracker";
+                "https://github.com/saadusufzai/COVID-19-TrackerAPP-React";
             }}
           ></GitHubIcon>
           <Typography className={classes.title} variant="h6" noWrap>
