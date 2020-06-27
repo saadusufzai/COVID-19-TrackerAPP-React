@@ -41,12 +41,13 @@ export default function Tables({ provinces: { data }, country }) {
   });
 
   const classes = useStyles();
+  
 
   if (!data) {
     return "loading...";
   }
 
-  console.log(data);
+ 
   return (
     <div className={styles.container}>
       <Typography color="textSecondary" variant="h4" align="center">
@@ -57,7 +58,7 @@ export default function Tables({ provinces: { data }, country }) {
         <Table className={classes.table} aria-label="customized table">
           <TableHead>
             <TableRow>
-              <StyledTableCell>Proviences</StyledTableCell>
+              <StyledTableCell>Provinces</StyledTableCell>
               <StyledTableCell align="center">TotalCases</StyledTableCell>
               <StyledTableCell align="center">Recovered</StyledTableCell>
               <StyledTableCell align="center">Deaths</StyledTableCell>
