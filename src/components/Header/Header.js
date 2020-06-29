@@ -4,9 +4,9 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import FormControl from "@material-ui/core/FormControl";
-import { fetchcountries } from "../../api/api";
-import { NativeSelect } from "@material-ui/core";
-import GitHubIcon from "@material-ui/icons/GitHub";
+import { NativeSelect, Link } from "@material-ui/core";
+import github from '../../images/github.png'
+import styles from './Header.module.css'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -69,17 +69,11 @@ export default function Header({ handelInput, countries }) {
     <div className={classes.root}>
       <AppBar position="fixed">
         <Toolbar>
-          <GitHubIcon
-            edge="start"
-            className={(classes.menuButton, classes.clickableIcon)}
-            color="inherit"
-            aria-label="open drawer"
-            role="img"
-            onClick={() => {
-              window.location.href =
-                "https://github.com/saadusufzai/COVID-19-TrackerAPP-React";
-            }}
-          ></GitHubIcon>
+       <Link className={styles.link} href='https://github.com/saadusufzai/COVID-19-TrackerAPP-React' target='blank'>
+       <img className={styles.github} alt="git"   src={github} />
+       </Link>
+
+        
           <Typography className={classes.title} variant="h6" noWrap>
             COVID-19 Tracker App by Saad Aslam
           </Typography>

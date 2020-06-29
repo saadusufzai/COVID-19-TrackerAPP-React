@@ -1,0 +1,9 @@
+.github{
+    margin-right: 10px;
+    width: 30px;
+
+}
+
+.github:hover{
+    opacity: 0.4;
+}
