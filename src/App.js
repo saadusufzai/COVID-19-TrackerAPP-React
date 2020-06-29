@@ -3,8 +3,8 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import GlobalChart from "./components/Charts/GlobalChart";
 import Cards from "./components/Cards/Cards";
-import Country from "./components/countries/country";
 import Table from "./components/Table/table";
+import Footer from './components/Footer/Footer'
 
 import { pakData, allCountriesData, fetchcountries } from "./api/api";
 import corona from "./images/corona.png";
@@ -60,6 +60,7 @@ const App = () => {
         {/* <Country  handelInput={handelInput} countries={countries} /> */}
         <GlobalChart data={data} />
       </div>
+      <Footer/>
     </div>
   );
 };

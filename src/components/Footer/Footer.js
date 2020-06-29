@@ -3,9 +3,10 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { fade, makeStyles } from "@material-ui/core/styles";
-import FormControl from "@material-ui/core/FormControl";
-import { NativeSelect } from "@material-ui/core";
-import GitHubIcon from "@material-ui/icons/GitHub";
+import YouTubeIcon from '@material-ui/icons/YouTube';
+import Link from '@material-ui/core/Link';
+
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -13,9 +14,10 @@ const useStyles = makeStyles((theme) => ({
   },
   clickableIcon: {
     marginRight: "10px",
-    color: "white",
+    color: "red",
     "&:hover": {
-      color: "red",
+      opacity:'0.7',
+      cursor:'pointer',
     },
   },
   menuButton: {
@@ -23,10 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
-    display: "none",
-    [theme.breakpoints.up("sm")]: {
-      display: "block",
-    },
+    
   },
   search: {
     position: "relative",
@@ -66,35 +65,23 @@ export default function Header({ handelInput, countries }) {
 
   return (
     <div className={classes.root}>
-      <AppBar color='primary' position="fixed">
+      <AppBar color='inherit' position="bottom">
         <Toolbar>
-          <GitHubIcon
-            edge="start"
-            className={(classes.menuButton, classes.clickableIcon)}
-            color="inherit"
-            aria-label="open drawer"
-            role="img"
-            onClick={() => {
-              window.location.href =
-                "https://github.com/saadusufzai/COVID-19-TrackerAPP-React";
-            }}
-          ></GitHubIcon>
-          <Typography className={classes.title} variant="h6" noWrap>
-           Track COVID-19 World Situation 
+        <Typography className={classes.title} variant="subtitle" noWrap>
+            Developed by <Link
+             href='https://www.facebook.com/saadusufzai'
+             target='_blank'
+             rel='noopener'
+            >Saad Aslam</Link>
           </Typography>
-          <div className={classes.search}>
-            <div className={classes.searchIcon}></div>
-            <FormControl>
-              <NativeSelect onChange={handelInput} style={{ width: "100%" }}>
-                <option value=""> Countries</option>
-                {countries.map((country, i) => (
-                  <option key={i} value={country.name}>
-                    {country.name}
-                  </option>
-                ))}
-              </NativeSelect>
-            </FormControl>
-          </div>
+          <Link className={classes.clickableIcon}
+            
+             href='https://www.youtube.com/channel/UCQUzFN8_vjiSwdxnxxNpd0Q'
+             target='_blank'
+             rel='noopener' >
+            <YouTubeIcon></YouTubeIcon>
+          </Link>
+          
         </Toolbar>
       </AppBar>
     </div>

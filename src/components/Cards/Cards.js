@@ -16,7 +16,7 @@ export default function Cards({ data: { data } }) {
 
   return (
     <div>
-      <Grid  xs={12}   className={styles.container} container spacing={3} justify="center">
+      <Grid    className={styles.container} container spacing={3} justify="center">
         <Grid
           item
           component={Card}
@@ -32,10 +32,13 @@ export default function Cards({ data: { data } }) {
               Infected
             </Typography>
             <CountUp
+              
               start={0}
               end={confirmed.value}
               duration={2}
-              seperator=","
+              separator={','}
+              style={{ fontSize: 20 }}
+              
             />
             <Typography color="textSecondary">
               {new Date(lastUpdate).toDateString()}
@@ -60,7 +63,8 @@ export default function Cards({ data: { data } }) {
               start={0}
               end={recovered.value}
               duration={2}
-              seperator=","
+              separator={','}
+              style={{ fontSize: 20 }}
             />
             <Typography color="textSecondary">
               {new Date(lastUpdate).toDateString()}
@@ -85,7 +89,8 @@ export default function Cards({ data: { data } }) {
               start={0}
               end={deaths.value}
               duration={2}
-              seperator=" , "
+              separator={','}
+              style={{ fontSize: 20 }}
             />
             <Typography color="textSecondary">
               {new Date(lastUpdate).toDateString()}
